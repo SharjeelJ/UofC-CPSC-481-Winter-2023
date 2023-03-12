@@ -1,0 +1,37 @@
+﻿@page "/ReviewBill"
+@inject NavigationManager NavigationManager
+
+<div id="main-container" style="display: grid">
+    <div id="title-container" style="display: flex; justify-content:center; margin-bottom: 20px;">
+        <h3 style="margin-top: 20px; border-bottom: 2px solid black;">Your Bill</h3>
+    </div>
+
+    <MudDivider></MudDivider>
+    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+    <MudDivider></MudDivider>
+
+    <div id="cost-calculation-holder" style="display:flex; justify-content:end;">
+        <div id="cost-calculation" style="padding: 20px;">
+            <div id="tax" style="text-align:end; padding-bottom: 5px">Tax: $X</div>
+            <div id="GST" style="text-align:end;  padding-bottom: 5px; border-bottom: 1px dotted black;">GST: $X</div>
+            <div id="Total-cost" style="font-weight: 600; font-size: larger; padding-top: 5px">Total: $X</div>
+        </div>
+    </div>
+    
+    <div id="request-bill-holder" style="display: flex; justify-content:center; padding: 15px;">
+        <MudButton @onclick="@NavigateToPage" Variant="Variant.Filled" Size="Size.Large" Style="border-radius: 5px; background-color:midnightblue; color:white; width:200px; padding: 10px 0px;">Request Bill</MudButton>
+    </div>
+
+
+</div>
+
+
+
+@code {
+    private void NavigateToPage()
+    {
+        NavigationManager.NavigateTo("/BillRequested");
+    }
+}

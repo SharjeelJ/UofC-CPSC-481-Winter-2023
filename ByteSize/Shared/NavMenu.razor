@@ -1,7 +1,7 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">ByteSize</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+        <button title="Navigation menu" class="navbarToggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
@@ -9,20 +9,24 @@
 
 <div class="@NavMenuCssClass nav-menu" @onclick="ToggleNavMenu">
     <nav class="nav-content-holder">
+        <div class="langBtnContainer">
+            <MudButton class="backButton" OnClick="ToggleNavMenu" Style="color: white; padding: 0px;"><MudIcon Icon="@Icons.Material.Filled.ArrowBack"></MudIcon></MudButton>
+            <MudButton class="langButton" Style="color: white; ">English</MudButton>
+        </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> View Orders
+                <MudIcon Style="font-size:auto; margin-right: 10px;" Icon="@Icons.Material.Filled.RestaurantMenu"></MudIcon> View Orders
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Request Help
+                <MudIcon Style="font-size:20px; margin-right: 10px;" Icon="@Icons.Material.Filled.Help"></MudIcon> Request Help
             </NavLink>
         </div>
     </nav>
-    <div class="nav-item px-3" id="review-bill">
-        <NavLink class="nav-link">
-            <span class="oi oi-list-rich" aria-hidden="true"></span> Review Bills
+    <div class="nav-item px-3">
+        <NavLink class="nav-link border border-white" href="ReviewBill">
+            <MudIcon Style="font-size:20px; margin-right: 10px;" Icon="@Icons.Material.Filled.MenuBook"></MudIcon> Review Bill
         </NavLink>
     </div>
 </div>

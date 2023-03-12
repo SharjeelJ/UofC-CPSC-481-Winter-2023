@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj": {}
+    "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj": {
+    "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj",
+        "projectUniqueName": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj",
         "projectName": "ByteSize",
-        "projectPath": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj",
+        "projectPath": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj",
         "packagesPath": "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\obj\\",
+        "outputPath": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mohamed Elhefnawy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,6 +48,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[6.1.9, )"
             }
           },
           "imports": [

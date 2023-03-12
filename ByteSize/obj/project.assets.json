@@ -403,6 +403,29 @@
           }
         }
       },
+      "MudBlazor/6.1.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.11",
+          "Microsoft.AspNetCore.Components.Web": "6.0.11"
+        },
+        "compile": {
+          "lib/net6.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -900,6 +923,29 @@
           "lib/net6.0/Microsoft.JSInterop.WebAssembly.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "MudBlazor/6.1.9": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.11",
+          "Microsoft.AspNetCore.Components.Web": "6.0.11"
+        },
+        "compile": {
+          "lib/net6.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -1598,6 +1644,29 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "MudBlazor/6.1.9": {
+      "sha512": "Vvdqrow3NX+yxl3gJYaKxsQXohA2N7t9a9NVzctnWy2oghU610bYcOXfP80exw/ygfGXovh9GHcQD/0VV6ohPw==",
+      "type": "package",
+      "path": "mudblazor/6.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net6.0/MudBlazor.dll",
+        "lib/net6.0/MudBlazor.xml",
+        "lib/net7.0/MudBlazor.dll",
+        "lib/net7.0/MudBlazor.xml",
+        "mudblazor.6.1.9.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js"
+      ]
+    },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
       "sha512": "frQDfv0rl209cKm1lnwTgFPzNigy2EKk1BS3uAvHvlBVKe5cymGyHO+Sj+NLv5VF/AhHsqPIUUwya5oV4CHMUw==",
       "type": "package",
@@ -1758,7 +1827,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.13",
-      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.13"
+      "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.13",
+      "MudBlazor >= 6.1.9"
     ]
   },
   "packageFolders": {
@@ -1767,11 +1837,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj",
+      "projectUniqueName": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj",
       "projectName": "ByteSize",
-      "projectPath": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj",
+      "projectPath": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj",
       "packagesPath": "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\obj\\",
+      "outputPath": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mohamed Elhefnawy\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1808,6 +1878,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.13, )"
+          },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[6.1.9, )"
           }
         },
         "imports": [

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l83GcLeBA9WFrpxzhmxEe28kaQTJTnnZmBuGnrc6fF8qabCl2TCcj87a4xp0Dx2+DtkswVHhTLG/W2E8qU7bQQ==",
+  "dgSpecHash": "TcaGtRzSe2YjEmptk04Y7UYoM6hlAi3AaFEN+5LRXyILxjpuZj9lRgSmzktfSHNzVyvzY2hlDAjpaWnw3UAHlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mohamed Elhefnawy\\source\\repos\\ByteSize\\ByteSize\\ByteSize.csproj",
+  "projectFilePath": "C:\\Users\\Mohamed Elhefnawy\\Documents\\GitHub\\UofC-CPSC-481-Winter-2023\\ByteSize\\ByteSize.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.13\\microsoft.aspnetcore.authorization.6.0.13.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.13\\microsoft.aspnetcore.components.6.0.13.nupkg.sha512",
@@ -28,6 +28,7 @@
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\microsoft.jsinterop\\6.0.13\\microsoft.jsinterop.6.0.13.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.13\\microsoft.jsinterop.webassembly.6.0.13.nupkg.sha512",
+    "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\mudblazor\\6.1.9\\mudblazor.6.1.9.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Mohamed Elhefnawy\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
