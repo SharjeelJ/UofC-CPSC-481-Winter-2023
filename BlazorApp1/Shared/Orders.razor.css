@@ -1,0 +1,91 @@
+﻿.full-screen {
+    background-color: white;
+    height: 100px;
+}
+
+.container-center {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
+}
+
+.order-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    border-bottom: 1px solid #a7a1a1;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 4px 4px;
+}
+
+.exit-button {
+    position: absolute;
+    right: 10px;
+    top: 100px;
+}
+
+.place-order {
+    position: absolute;
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-title {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 30px;
+}
+
+
+h4 {
+    margin-top: -15px;
+}
+
+.od-nm {
+    position: absolute;
+    left: 25%;
+}
+
+.od-tm {
+    position: absolute;
+    right: 25%;
+}
+
+button {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 1px 9px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    font-weight: 600;
+}
+
+.exit-button button {
+    background-color: lightseagreen;
+    padding: 5px 12px;
+}
+
+.hidden {
+    display: none;
+}

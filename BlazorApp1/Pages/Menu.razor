@@ -1,0 +1,17 @@
+﻿@page "/"
+
+<PageTitle>Menu</PageTitle>
+
+<select class="form-control" @bind="@selection">
+    @foreach (var item in items)
+    {
+        <option value=@item>@item</option>
+    }
+</select>
+<button class="btn btn-default" type="submit" onclick="location.href='/displayitem/@selection'">Select</button>
+<button class="btn btn-default" type="submit" onclick="location.href='/selectlanguage'">Language</button>
+
+@code {
+    List<string> items = new List<string>() { "Nachos", "Steak" };
+    private string selection = "";
+}

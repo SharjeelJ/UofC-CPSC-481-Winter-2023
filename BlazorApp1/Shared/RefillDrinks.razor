@@ -1,0 +1,58 @@
+﻿<div class="full-screen @hidden">
+    <div class="container-center">
+
+        <div class="drink-item">
+            <h4>Tap Water</h4>
+            <h3>$0</h3>
+            <button class="refill-btn">Refill</button>
+        </div>
+        <div class="drink-item">
+            <h4>Drink2</h4>
+            <h3>$0</h3>
+            <button class="refill-btn">Refill</button>
+        </div>
+        <div class="drink-item">
+            <h4>Drink3</h4>
+            <h3>$0</h3>
+            <button class="refill-btn">Refill</button>
+        </div>
+        <div class="drink-item">
+            <h4>Drink3</h4>
+            <h3>$0</h3>
+            <button class="refill-btn">Refill</button>
+        </div>
+        <div class="drink-item">
+            <h4>Drink4</h4>
+            <h3>$0</h3>
+            <button class="refill-btn">Refill</button>
+        </div>
+
+
+    </div>
+
+    <div class="page-title">
+        <h1>Request Drink Refill</h1>
+    </div>
+
+    <div class="exit-button">
+        <button @onclick=toggleDrinks>x</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string hidden { get; set; } = "hidden";
+
+    public void toggleDrinks()
+    {
+        if (hidden == "hidden")
+        {
+            hidden = "";
+        }
+        else
+        {
+            hidden = "hidden";
+        }
+
+    }
+}

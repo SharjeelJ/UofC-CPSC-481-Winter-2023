@@ -1,0 +1,28 @@
+﻿@page "/selectlanguage"
+
+<PageTitle>Select Language</PageTitle>
+
+<select class="form-control" @bind="@selection">
+    <!--Top 27 languages https://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers-->
+    @foreach (var lang in langs)
+    {
+        <option value=@lang>@lang</option>
+    }
+</select>
+<button class="btn btn-default" type="submit" @onclick="Submitted">Select</button>
+@if (langChanged)
+{
+    <h2>Language Changed to @selection !</h2>
+    <!--Bug: After pressing select the first time, changing the selection changes this text without pressing select again.-->
+}
+
+@code {
+    private bool langChanged = false;
+    List<string> langs = new List<string>() { "English", "Français", "Español", "Português", "Deutsch", "Italiano", "官話 / 官话", "粵語 / 粤语", "русский язык", "українська мова", "हिन्दी", "বাংলা", "日本語", "Tiếng Việt", "Türkçe", "吴语/吳語", "मराठी", "తెలుగు", "한국어", "தமிழ்", "مصرى", "اَلْعَرَبِيَّةُ", "اردو", "ꦧꦱꦗꦮ", "ਪੰਜਾਬੀ", "فارسی", "ગુજરાતી", "भोजपुरी<", "هَرْشَن هَوْسَ" };
+    private string selection = "";
+
+    private void Submitted()
+    {
+        langChanged = true;
+    }
+}

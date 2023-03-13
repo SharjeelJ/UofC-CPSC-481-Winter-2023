@@ -1,0 +1,107 @@
+﻿@page "/displayitem/{item}"
+
+<PageTitle>Display Item</PageTitle>
+@if (item == "Nachos")
+{
+    <img src="./nachos.jpg" style="position: relative; top:0px; max-width: 354px">
+    <h4>Nachos</h4>
+    @if (true)
+    {
+        price = 6.69;
+    }
+    <p role="status" style="position: sticky;">$@price</p>
+    <h6>Crispy tortilla chips loaded with melted cheddar or Monterey Jack cheese, topped with savory seasoned ground beef, diced chicken, or black beans, and finished off with fresh diced tomatoes, cilantro, and sliced jalapenos. Our nachos are the perfect appetizer or snack for any occasion!</h6>
+    <h5>Ingredients</h5>
+    <ul>
+        <li>Tortilla chips</li>
+        <li>Shredded cheddar and Monterey Jack cheese</li>
+        <li>Seasoned ground beef or diced chicken (or black beans for a vegetarian option)</li>
+        <li>Diced tomatoes</li>
+        <li>Chopped fresh cilantro</li>
+        <li>Sliced jalapenos (optional)</li>
+        <li>Sour cream (optional)</li>
+        <li>Guacamole (optional)</li>
+        <li>Salsa (optional)</li>
+    </ul>
+    <h5>Dietary Considerations</h5>
+    <h6>Gluten Free</h6>
+    <h5>Item Customization</h5>
+    <div class="row d-flex flex-column">
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox"> Replace cheddar with Monterey Jack  $1.18
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..." @onchange="addPrice"> Replace ground beef with diced chicken $1.10
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..."> Replace ground beef with black beans $0.50
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..."> Add sliced jalapenos $1.19
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..."> Add sour cream $1.20
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..."> Add guacamole $1.17
+                </label>
+            </div>
+        </div>
+
+        <div class="row d-flex flex-row">
+            <div class="check">
+                <label>
+                    <input type="checkbox" aria-label="..."> Add salsa $1.50
+                </label>
+            </div>
+        </div>
+
+    </div>
+}
+@if (item == "Steak")
+{
+    <img src="./steak.jpg" style="position: relative; top:0px; max-width: 354px">
+}
+
+@code {
+    double price = 0;
+
+    void addPrice()
+    {
+        price++;
+        InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+    [Parameter]
+    public string item { get; set; } = "Default";
+}

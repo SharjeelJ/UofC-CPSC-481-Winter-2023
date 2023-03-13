@@ -1,0 +1,53 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BlazorApp1
+build_property.RootNamespace = BlazorApp1
+build_property.ProjectDir = C:\Users\zorai\OneDrive\Desktop\481 test\BlazorApp1\BlazorApp1\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\zorai\OneDrive\Desktop\481 test\BlazorApp1\BlazorApp1
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Pages/DisplayItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUl0ZW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Pages/Menu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Pages/SelectLanguage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VsZWN0TGFuZ3VhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Shared/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENhcnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-59g76gd4km
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-45rkf8v3vv
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Shared/Orders.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE9yZGVycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-i6ml72kc29
+
+[C:/Users/zorai/OneDrive/Desktop/481 test/BlazorApp1/BlazorApp1/Shared/RefillDrinks.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZmlsbERyaW5rcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-xcb1ake17s

@@ -1,0 +1,47 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+
+    <main>
+        <div class="top-row px-4">
+            <a href="/"><img src="./logo.png" style="position: absolute; top:2px; left:2px; width:50px"></a>
+            <a @onclick=toggleCart><img src="./cart.png" style="position: absolute; top:12px; left:315px; width:38px"></a>
+            <a @onclick=toggleRefill><img src="./drink.png" style="position: absolute; top:10px; left:270px; width:34px"></a>
+            <a @onclick=toggleOrders><img src="./hamburger.png" style="position: absolute; top:12px; left:370px; width:35px"></a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@if (ShowCart)
+{
+    <Cart hidden="" />
+}
+
+@if (ShowRefill)
+{
+    <RefillDrinks hidden="" />
+}
+
+@if (ShowOrders)
+{
+    <Orders hidden="" />
+}
+
+@code{
+
+    [Parameter]
+    public bool ShowRefill { get; set; } = false;
+    [Parameter]
+    public bool ShowCart { get; set; } = false;
+    [Parameter]
+    public bool ShowOrders { get; set; } = false;
+
+    public void toggleRefill() => ShowRefill = !ShowRefill;
+    public void toggleCart() => ShowCart = !ShowCart;
+    public void toggleOrders() => ShowOrders = !ShowOrders;
+    
+}
