@@ -7,24 +7,25 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.3" PrivateAssets="all" />
     </ItemGroup>
 
     <ItemGroup>
-        <_ContentIncludedByDefault Remove="Byte Size\App.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Pages\Counter.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Pages\FetchData.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Pages\Index.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Shared\MainLayout.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Shared\NavMenu.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Shared\SurveyPrompt.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\_Imports.razor"/>
-        <_ContentIncludedByDefault Remove="Byte Size\obj\Byte Size.csproj.nuget.dgspec.json"/>
-        <_ContentIncludedByDefault Remove="Byte Size\obj\project.assets.json"/>
-        <_ContentIncludedByDefault Remove="Byte Size\obj\project.packagespec.json"/>
-        <_ContentIncludedByDefault Remove="Byte Size\Properties\launchSettings.json"/>
-        <_ContentIncludedByDefault Remove="Byte Size\wwwroot\sample-data\weather.json"/>
+        <_ContentIncludedByDefault Remove="Byte Size\App.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Pages\Counter.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Pages\FetchData.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Pages\Index.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Shared\MainLayout.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Shared\NavMenu.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\Shared\SurveyPrompt.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\_Imports.razor" />
+        <_ContentIncludedByDefault Remove="Byte Size\obj\Byte Size.csproj.nuget.dgspec.json" />
+        <_ContentIncludedByDefault Remove="Byte Size\obj\project.assets.json" />
+        <_ContentIncludedByDefault Remove="Byte Size\obj\project.packagespec.json" />
+        <_ContentIncludedByDefault Remove="Byte Size\Properties\launchSettings.json" />
+        <_ContentIncludedByDefault Remove="Byte Size\wwwroot\sample-data\weather.json" />
+        <_ContentIncludedByDefault Remove="wwwroot\sample-data\weather.json" />
     </ItemGroup>
 
 </Project>
