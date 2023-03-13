@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 150px;
+    max-width: 420px;
 }
 
 .order-item[b-i6ml72kc29] {
@@ -28,20 +29,14 @@
 
 .exit-button[b-i6ml72kc29] {
     position: absolute;
-    right: 10px;
     top: 100px;
-}
-
-.place-order[b-i6ml72kc29] {
-    position: absolute;
-    position: fixed;
-    right: 0;
-    bottom: 50px;
-    left: 0;
+    left: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 40px;
 }
+
 
 .page-title[b-i6ml72kc29] {
     position: absolute;
@@ -53,6 +48,7 @@
     align-items: center;
     background-color: white;
     padding-top: 30px;
+    max-width: 420px;
 }
 
 

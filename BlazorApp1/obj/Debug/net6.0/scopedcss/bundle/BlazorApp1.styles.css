@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 150px;
+    max-width: 420px;
 }
 
 .cart-item[b-59g76gd4km] {
@@ -29,19 +30,24 @@
 
 .exit-button[b-59g76gd4km] {
     position: absolute;
-    right: 10px;
     top: 100px;
+    left: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40px;
 }
 
 .place-order[b-59g76gd4km] {
     position: absolute;
     position: fixed;
     right: 0;
-    bottom: 50px;
+    top: 820px;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 420px;
 }
 
 .page-title[b-59g76gd4km] {
@@ -54,6 +60,7 @@
     align-items: center;
     background-color: white;
     padding-top: 30px;
+    max-width: 420px;
 }
 
 h3[b-59g76gd4km] {
@@ -239,6 +246,7 @@ main[b-45rkf8v3vv] {
     display: flex;
     flex-direction: column;
     padding-bottom: 150px;
+    max-width: 420px;
 }
 
 .order-item[b-i6ml72kc29] {
@@ -254,20 +262,14 @@ main[b-45rkf8v3vv] {
 
 .exit-button[b-i6ml72kc29] {
     position: absolute;
-    right: 10px;
     top: 100px;
-}
-
-.place-order[b-i6ml72kc29] {
-    position: absolute;
-    position: fixed;
-    right: 0;
-    bottom: 50px;
-    left: 0;
+    left: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 40px;
 }
+
 
 .page-title[b-i6ml72kc29] {
     position: absolute;
@@ -279,6 +281,7 @@ main[b-45rkf8v3vv] {
     align-items: center;
     background-color: white;
     padding-top: 30px;
+    max-width: 420px;
 }
 
 
@@ -331,6 +334,7 @@ button[b-i6ml72kc29] {
     display: flex;
     flex-direction: column;
     padding-bottom: 150px;
+    max-width: 420px;
 }
 
 .drink-item[b-xcb1ake17s] {
@@ -346,8 +350,12 @@ button[b-i6ml72kc29] {
 
 .exit-button[b-xcb1ake17s] {
     position: absolute;
-    right: 10px;
     top: 100px;
+    left: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40px;
 }
 
 
@@ -361,6 +369,7 @@ button[b-i6ml72kc29] {
     align-items: center;
     background-color: white;
     padding-top: 30px;
+    max-width: 420px;
 }
 
 h3[b-xcb1ake17s] {
