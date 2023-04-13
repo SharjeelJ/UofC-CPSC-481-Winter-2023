@@ -1,0 +1,85 @@
+﻿<div class="full-screen @hidden">
+    <div class="container-center">
+
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>          
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+        <div class="cart-item">
+            <button class="decrement">-</button>
+            <h4 class="fd-amt">1</h4>
+            <button class="increment">+</button>
+            <h4 class="fd-name">Food item #1</h4>
+            <h3 class="fd-price">$10</h3>
+        </div>
+
+    </div>
+
+    <div class="place-order">
+        <button>Place Order!</button>
+    </div>
+
+    <div class="page-title">
+        <h1>Your Cart</h1>
+    </div>
+
+    <div class="exit-button">
+        <button @onclick=toggleCart>x</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string hidden { get; set; } = "hidden";
+
+    public void toggleCart()
+    {
+        if (hidden == "hidden")
+        {
+            hidden = "";
+        }
+        else
+        {
+            hidden = "hidden";
+        }
+
+    }
+}

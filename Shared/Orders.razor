@@ -1,0 +1,44 @@
+﻿<div class="full-screen @hidden">
+    <div class="container-center">
+
+        <div class="order-item">
+            <h4 class="od-nm">Order#1</h4>
+            <h4 class="od-tm">2:57 PM</h4>
+        </div>
+        <div class="order-item">
+            <h4 class="od-nm">Order#2</h4>
+            <h4 class="od-tm">3:13 PM</h4>
+        </div>
+        <div class="order-item">
+            <h4 class="od-nm">Order#3</h4>
+            <h4 class="od-tm">3:20 PM</h4>
+        </div>
+
+    </div>
+
+    <div class="page-title">
+        <h1>Orders</h1>
+    </div>
+
+    <div class="exit-button">
+        <button @onclick=toggleOrders>x</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string hidden { get; set; } = "hidden";
+
+    public void toggleOrders()
+    {
+        if (hidden == "hidden")
+        {
+            hidden = "";
+        }
+        else
+        {
+            hidden = "hidden";
+        }
+
+    }
+}
