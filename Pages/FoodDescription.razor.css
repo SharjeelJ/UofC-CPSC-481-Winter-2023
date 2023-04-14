@@ -67,3 +67,7 @@ h2 {
 #count {
     color: white;
 }
+
+#description_header {
+    margin: -24px;
+}

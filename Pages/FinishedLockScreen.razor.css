@@ -1,10 +1,13 @@
 ﻿.lockscreen {
     width: 100vw;
-    height:100vh;
     background-color: #bebebe;
     background-image: url("./lock_screen_empty.png");
     background-size: 100vw;
     background-repeat: no-repeat;
+    margin: -24px;
+    position: absolute;
+    top: 0;
+    height: 103vh;
 }
 
 h1 {
