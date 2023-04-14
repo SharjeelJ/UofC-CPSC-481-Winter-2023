@@ -1,0 +1,220 @@
+@page "/"
+
+@* Menu text & filter button *@
+<div class="container-fluid" style="padding: 0">
+    <div class="row justify-content-between" style="padding: 0">
+        <div class="col h5 col-auto center align-self-center me-auto" style="padding: 0">Menu</div>
+        <div class="col h5 col-auto nav-link" data-bs-toggle="modal" style="padding: 0" data-bs-target="#MenuFiltersModal">
+            <img src="images/filter-svgrepo-com.svg" alt="" width="30" height="24">
+        </div>
+    </div>
+</div>
+
+@* Menu section header *@
+<hr class="mt-0 mb-0 opacity-100" style="margin-left: -24px; margin-right: -24px">
+<h4 class="text-center">Appetizers</h4>
+<hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
+
+@* Menu items *@
+<div class="list-group" style="margin-left: -24px; margin-right: -24px">
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/wings.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Wings</div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Chicken wings, cayenne pepper, butter</div>
+        </div>
+        <div class="flex-grow-1">$7</div>
+    </div>
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/fries.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Fries <img src="images/gluten-free.png" height="24" alt="..."></div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Potatoes, vegetable oil, salt</div>
+        </div>
+        <div class="flex-grow-1">$4</div>
+    </div>
+</div>
+
+@* Menu section header *@
+<hr class="mt-0 mb-0 opacity-100" style="margin-left: -24px; margin-right: -24px">
+<h4 class="text-center">Lunch</h4>
+<hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
+
+@* Menu items *@
+<div class="list-group" style="margin-left: -24px; margin-right: -24px">
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/burger.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Chicken Burger</div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Chicken patty, bun, lettuce, tomatoes</div>
+        </div>
+        <div class="flex-grow-1">$12</div>
+    </div>
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/wrap.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Pita Wrap</div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Chicken, whole wheat pita, garlic sauce, tzatziki sauce</div>
+        </div>
+        <div class="flex-grow-1">$10</div>
+    </div>
+</div>
+
+@* Menu section header *@
+<hr class="mt-0 mb-0 opacity-100" style="margin-left: -24px; margin-right: -24px">
+<h4 class="text-center">Desserts</h4>
+<hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
+
+@* Menu items *@
+<div class="list-group" style="margin-left: -24px; margin-right: -24px">
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/chocolate-cake.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Chocolate Cake</div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Contains wheat, milk, egg, soy</div>
+        </div>
+        <div class="flex-grow-1">$5</div>
+    </div>
+    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="flex-shrink-0">
+            <img src="images/carrot-cake.jpeg" height="80" alt="...">
+        </div>
+        <div class="container-fluid">
+            <div class="flex-grow-1 h6">Carrot Cake</div>
+            <div>&nbsp</div>
+            <div class="flex-grow-1 small text-muted">Sugar, corn syrup, carrot flavored pieces</div>
+        </div>
+        <div class="flex-grow-1">$4</div>
+    </div>
+</div>
+
+@* Menu filters modal *@
+<div class="modal fade" id="MenuFiltersModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="MenuFiltersModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="MenuFiltersModalLabel">Menu Filters</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid" style="padding: 0">
+                    <div class="h5">Category</div>
+                    <div class="list-group">
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/french-fries-svgrepo-com.svg" height="30" alt="..."> Appetizers</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/lunch-svgrepo-com.svg" height="30" alt="..."> Lunch</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/dinner-svgrepo-com.svg" height="30" alt="..."> Dinner</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/salad-svgrepo-com.svg" height="30" alt="..."> Salads</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/plate-meat-svgrepo-com.svg" height="30" alt="..."> Steaks</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/tiramisu-cake-1-svgrepo-com.svg" height="30" alt="..."> Desserts</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>&nbsp</div>
+
+                <div class="container-fluid" style="padding: 0">
+                    <div class="h5">Main Ingredient</div>
+                    <div class="list-group">
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/chicken-svgrepo-com.svg" height="30" alt="..."> Poultry</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/cow-svgrepo-com.svg" height="30" alt="..."> Beef</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/pig-svgrepo-com.svg" height="30" alt="..."> Pork</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/fish-svgrepo-com.svg" height="30" alt="..."> Seafood</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/vegetarian-food-svgrepo-com.svg" height="30" alt="..."> Vegetarian</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div>&nbsp</div>
+
+                <div class="container-fluid" style="padding: 0">
+                    <div class="h5">Allergy Friendly</div>
+                    <div class="list-group">
+                        <label class="list-group-item">
+                            <div class="row justify-content-between">
+                                <div class="col"><img src="images/gluten-free.png" height="30" alt="..."> Gluten-Free</div>
+                                <input class="col-auto form-check-input me-1" type="checkbox">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <h6 class="align-self-center">6/30 Items</h6>
+                <button type="button" class="btn btn-primary">Apply Changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

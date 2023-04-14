@@ -1,0 +1,22 @@
+﻿@page "/request_help_lock_screen"
+
+<PageTitle>lock screen</PageTitle>
+<div class="lockscreen">
+    <div class="empty_space"></div>
+    <div class="notification">
+        <h1>Order ETA: @timeETA min</h1>
+        <p>Your oder is on the way! Use the buttons below to request a Refill or request assistance from a server.</p>
+        <p id="break_line">________________________________________________</p>
+        <input type="button" value="Request Help" onclick="flagHelp" />
+        <input type="button" value="Order Drink" onclick="window.location.href='/finished_lock_screen';" />
+    </div>
+
+    <div class="notification">
+        <h1>Help is on the way</h1>
+        <p>A server will be with you shortly. Thank you for waiting.</p>
+    </div>
+</div>
+
+@code {
+    private int timeETA = 10;
+}

@@ -1,0 +1,16 @@
+﻿@page "/initial_lock_screen"
+
+<PageTitle>lock screen</PageTitle>
+<div class="lockscreen">
+    <div class="empty_space"></div>
+    <div class="notification">
+        <h1>You're at Table @table_num</h1>
+        <p>Simply sit down at this table and press Order Now to begin your dining experience</p>
+        <p id="break_line">________________________________________________</p>
+        <input type="button" value="next page" onclick="window.location.href='/ordered_lock_screen';" />
+    </div>
+</div>
+
+@code {
+    private int table_num = 5;
+}

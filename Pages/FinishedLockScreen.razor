@@ -1,0 +1,28 @@
+﻿@page "/finished_lock_screen"
+
+<PageTitle>lock screen</PageTitle>
+<div class="lockscreen">
+    <div class="empty_space"></div>
+    <div class="notification">
+        <h1>Enjoy your stay!</h1>
+        <p>You can use the notification to request drink refills, request assistance from a server, or request your bill!</p>
+        <p id="break_line">________________________________________________</p>
+        <input type="button" value="Request Help" onclick="flagHelp" />
+        <input type="button" value="Request Bill" onclick="window.location.href='/counter';" />
+        <input type="button" value="Order Drink" onclick="window.location.href='/counter';" />
+    </div>
+
+    <div class="notification" visibility=@hidden>
+        <h1>Help is on the way</h1>
+        <p>A server will be with you shortly. Thank you for waiting.</p>
+    </div>
+</div>
+
+@code {
+    private String hidden = "hidden";
+
+    private void flagHelp()
+    {
+        hidden = "visible";
+    }
+}
