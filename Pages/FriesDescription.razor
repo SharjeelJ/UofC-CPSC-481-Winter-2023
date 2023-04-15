@@ -1,0 +1,60 @@
+﻿@page "/fries_description"
+
+<PageTitle>Fries</PageTitle>
+<div id="description_screen">
+    <div id="description_header">
+        <h1>Fries</h1>
+        <h2>$4.99</h2>
+    </div>
+    
+    <img src="./images/fries.jpeg" id="image"/>
+    <div id="description">
+        <p>All our fries are made in-house and we use only the finest, locally grown potatoes. Try our house-made fries which offers a delicious and authentic Canadian taste!</p>
+        <h2>Ingredients</h2>
+         <ul>
+            <li>salt</li>
+            <li>cheese</li>
+            <li>potato</li>
+        </ul> 
+        <h2>Dietary Considerations</h2>
+        <p>Gluten Free</p>
+        
+        <h2>Item Customization</h2>
+        <div id="checkbox">
+            <input type="checkbox" id="item1">
+            <label for="item1"> No salt </label><br>
+            <input type="checkbox" id="item2">
+            <label for="item2"> Waffle Fries </label><br>
+            <input type="checkbox" id="item3">
+            <label for="item3"> Ketchup </label><br><br />
+        </div>
+        
+        <h2>Special Instructions</h2>
+        <textarea type="text" id="special_instructions" placeholder="Insert Any Special Instructions"></textarea>
+    </div>
+
+    <div id="empty_space"></div>
+
+    <div id="footer">
+        <button id="decrement" @onclick="decrementCount">-</button>
+        <label id="count"> @currentCount </label>
+        <button id="increment" @onclick="IncrementCount">+</button> <br />
+        
+        <button id="cart">Add to cart</button>
+    </div>
+</div>
+
+@code {
+    private int currentCount = 1;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void decrementCount()
+    {
+        if(currentCount > 1)
+            currentCount--;
+    }
+}

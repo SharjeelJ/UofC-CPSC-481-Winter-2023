@@ -24,8 +24,8 @@ input {
 img {
     display: block;
     margin:auto;
-    width: 95%;
-    border-radius: 30px;
+    width: 85%;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -68,6 +68,10 @@ h2 {
     color: white;
 }
 
-#description_header {
+#description_screen {
     margin: -24px;
+}
+
+#description_header {
+    padding-top: 20px;
 }

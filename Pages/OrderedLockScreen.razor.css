@@ -49,7 +49,3 @@ input {
 .empty_space {
     padding-top: 250px;
 }
-
-.navbar.navbar-expand.bg-light {
-    display: none;
-}
