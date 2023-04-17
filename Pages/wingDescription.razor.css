@@ -23,7 +23,7 @@ input {
 
 img {
     display: block;
-    margin:auto;
+    margin: auto;
     width: 85%;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -38,7 +38,7 @@ img {
 
 #footer {
     text-align: center;
-    background-color: black;
+    background-color: #8C97A9;
     position: fixed;
     bottom: 0px;
     width: 100%;

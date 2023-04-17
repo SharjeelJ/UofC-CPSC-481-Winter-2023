@@ -1,12 +1,13 @@
-﻿@page "/wing_description"
+﻿@page "/wings_description"
+@inject NavigationManager UriHelper
 
-<PageTitle>Steak</PageTitle>
+<PageTitle>Wings</PageTitle>
 <div id="description_screen">
     <div id="description_header">
         <h1>Wings</h1>
-        <h2>$12.99</h2>
+        <h2>$7</h2>
     </div>
-    
+
     <img src="./images/wings.jpeg" id="image"/>
     <div id="description">
         <p>We use only the highest quality chicken and cook our wings to perfection to ensure that they're always tender and flavorful. And with a variety of dipping sauces available, you can customize your wings to your heart's content.</p>
@@ -15,23 +16,23 @@
             <li>Chicken wings</li>
             <li>Salt</li>
             <li>Pepper</li>
-        </ul> 
+        </ul>
         <h2>Dietary Considerations</h2>
         <p>Gluten Free</p>
-        
+
         <h2>Item Customization</h2>
 
         <div id="checkbox">
-            <input type="checkbox" id="item1">
+            <input type="checkbox" id="item1" @onclick="toggleBox1">
             <label for="item1"> No salt </label><br>
-            <input type="checkbox" id="item2">
+            <input type="checkbox" id="item2" @onclick="toggleBox2">
             <label for="item2"> Honey garlic sauce </label><br>
-            <input type="checkbox" id="item3">
+            <input type="checkbox" id="item3" @onclick="toggleBox3">
             <label for="item3"> Ketchup </label><br>
-            <input type="checkbox" id="item4">
-            <label for="item4"> Hot sauce </label><br><br />
+            <input type="checkbox" id="item4" @onclick="toggleBox4">
+            <label for="item4"> Hot Sauce </label><br><br />
         </div>
-        
+
         <h2>Special Instructions</h2>
         <textarea type="text" id="special_instructions" placeholder="Insert Any Special Instructions"></textarea>
     </div>
@@ -42,13 +43,47 @@
         <button id="decrement" @onclick="decrementCount">-</button>
         <label id="count"> @currentCount </label>
         <button id="increment" @onclick="IncrementCount">+</button> <br />
-        
-        <button id="cart">Add to cart</button>
+
+        <button id="cart" @onclick="addToCart">Add to cart</button>
     </div>
 </div>
 
 @code {
     private int currentCount = 1;
+    private string parameter = "wings@7";
+
+
+    private void addToCart()
+    {
+        parameter += "@" + currentCount;
+        if (box1)
+        {
+            parameter += "@no_salt";
+        }
+        if (box2)
+        {
+            parameter += "@honey_garlic_sauce";
+        }
+        if (box3)
+        {
+            parameter += "@ketchup";
+        }
+        if(box4)
+        {
+            parameter += "@hot_sauce";
+        }
+
+        if (UriHelper.Uri.Contains('@'))
+        {
+            String[] temp = UriHelper.Uri.Split('?');
+            UriHelper.NavigateTo("/?" + temp[temp.Length - 1] + $"${parameter}", forceLoad: true);
+        } else
+        {
+            UriHelper.NavigateTo($"/?{parameter}", forceLoad: true);
+        }
+
+    }
+
 
     private void IncrementCount()
     {
@@ -59,5 +94,27 @@
     {
         if(currentCount > 1)
             currentCount--;
+    }
+
+    private bool box1 = false;
+    private bool box2 = false;
+    private bool box3 = false;
+    private bool box4 = false;
+
+    private void toggleBox1()
+    {
+        box1 = !box1;
+    }
+    private void toggleBox2()
+    {
+        box2 = !box2;
+    }
+    private void toggleBox3()
+    {
+        box3 = !box3;
+    }
+    private void toggleBox4()
+    {
+        box4 = !box4;
     }
 }
