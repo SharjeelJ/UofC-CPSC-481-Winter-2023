@@ -9,7 +9,7 @@
             <nav class="navbar navbar-expand bg-light" style="margin: -24px -24px auto; height: fit-content">
                 <div class="container-fluid d-flex" style="max-height: 50px">
                     @* Restaurant icon *@
-                    <a class="navbar-brand align-self-baseline" href="#">
+                    <a class="navbar-brand align-self-baseline" @onclick="@NavigateToHome">
                         <img src="images/icon.svg" alt="" width="50" height="45">
                     </a>
                     @* Remaining navbar icons (will be right aligned) *@
@@ -25,7 +25,7 @@
                             @* Cart button *@
                             <div class="nav-item">
                                 <a class="nav-link" aria-current="page" @onclick="@NavigateToCart">
-                                    <img src="images/cart-basket-ui-5-svgrepo-com.svg" alt="" width="30" height="24">
+                                    <img src="@cartIcon"  alt="" width="30" height="24">
                                     @* <div>Cart</div> *@
                                 </a>
                             </div>
@@ -62,11 +62,11 @@
                                 <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
                                 <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
                             </div>
-                            <div class="divider"></div>
+                            <div class="divider" style="position: relative; top: 30px; opacity: 30%;"></div>
                             <div class="modal-body-2">
-                                <button @onclick="NavigateToRequestHelpLockScreen" Style="width: 80%; height: 100px ; font-size: 20px; border: none; border-radius: 25px; color:white; background-color:#6C757D">Request Help</button>
-                                <div style="height:40px;"> </div>
-                                <button @onclick="@NavigateToReviewBill" Style="width: 80%; height: 100px; font-size: 20px; border: none; border-radius: 25px; background-color: #1B6EC2; color:white;">Review Bill</button>
+                                <button @onclick="NavigateToRequestHelpLockScreen" Style="width: 80%; height: 100px ; font-size: 20px; border: none; border-radius: 10px; color:white; background-color:#6C757D">Request Help</button>
+                                <div style="height:50px;"> </div>
+                                <button @onclick="@NavigateToReviewBill" Style="width: 80%; height: 100px; font-size: 20px; border: none; border-radius: 10px; background-color: #1B6EC2; color:white;">Review Bill</button>
 
                             </div>
                         </div>
@@ -103,7 +103,15 @@
 
     private void NavigateToReviewBill()
     {
-        NavigationManager.NavigateTo("/ReviewBill", forceLoad:true);
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('/');
+            NavigationManager.NavigateTo("/ReviewBill/" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/ReviewBill", forceLoad: true);
+        }
     }
     private void NavigateToSelectLanguage()
     {
@@ -113,17 +121,43 @@
     {
         NavigationManager.NavigateTo("/RequestHelpLockScreen", forceLoad: true);
     }
+
+    string cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
+
+    protected override void OnInitialized()
+    {
+        if (NavigationManager.Uri.Contains("@"))
+        {
+            cartIcon = "images/cart-basket-ui-4-svgrepo-com.svg";
+        }
+        else
+        {
+            cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
+        }
+    }    
+
     private void NavigateToCart()
     {
         String[] temp = NavigationManager.Uri.Split('/');
         NavigationManager.NavigateTo("/Cart/" + temp[temp.Length-1], forceLoad: true);
     }
+
     private void NavigateToDrinks()
     {
         NavigationManager.NavigateTo("/Drinks", forceLoad: true);
     }
-    
 
+    private void NavigateToHome()
+    {
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('/');
+            NavigationManager.NavigateTo("/home/" + temp[temp.Length - 1], forceLoad: true);
+        } else
+        {
+            NavigationManager.NavigateTo("/", forceLoad: true);
+        }
+    }
 
 
     [Parameter]
@@ -137,4 +171,7 @@
     public void toggleCart() => ShowCart = !ShowCart;
     public void toggleOrders() => ShowOrders = !ShowOrders;
 
+
+
+    
 }

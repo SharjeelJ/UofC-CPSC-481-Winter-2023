@@ -7,7 +7,7 @@
         <h1>Wings</h1>
         <h2>$7</h2>
     </div>
-    
+
     <img src="./images/wings.jpeg" id="image"/>
     <div id="description">
         <p>We use only the highest quality chicken and cook our wings to perfection to ensure that they're always tender and flavorful. And with a variety of dipping sauces available, you can customize your wings to your heart's content.</p>
@@ -16,10 +16,10 @@
             <li>Chicken wings</li>
             <li>Salt</li>
             <li>Pepper</li>
-        </ul> 
+        </ul>
         <h2>Dietary Considerations</h2>
         <p>Gluten Free</p>
-        
+
         <h2>Item Customization</h2>
 
         <div id="checkbox">
@@ -32,7 +32,7 @@
             <input type="checkbox" id="item4" @onclick="toggleBox4">
             <label for="item4"> Hot Sauce </label><br><br />
         </div>
-        
+
         <h2>Special Instructions</h2>
         <textarea type="text" id="special_instructions" placeholder="Insert Any Special Instructions"></textarea>
     </div>
@@ -43,14 +43,14 @@
         <button id="decrement" @onclick="decrementCount">-</button>
         <label id="count"> @currentCount </label>
         <button id="increment" @onclick="IncrementCount">+</button> <br />
-        
+
         <button id="cart" @onclick="addToCart">Add to cart</button>
     </div>
 </div>
 
 @code {
     private int currentCount = 1;
-    private string parameter = "wings@7@";
+    private string parameter = "wings@7";
 
 
     private void addToCart()
@@ -73,7 +73,7 @@
             parameter += "@hot_sauce";
         }
 
-        UriHelper.NavigateTo($"/home/{parameter}");
+        UriHelper.NavigateTo($"/home/{parameter}", forceLoad: true);
     }
 
 

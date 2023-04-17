@@ -6,7 +6,7 @@
     <div class="row justify-content-between" style="padding: 0">
         <div class="col h5 col-auto center align-self-center me-auto" style="padding: 0">Menu</div>
         <div class="col h5 col-auto nav-link" data-bs-toggle="modal" style="padding: 0" data-bs-target="#MenuFiltersModal">
-            <img src="images/filter-svgrepo-com.svg" alt="" width="30" height="24">
+            <img src=@filterImgSrc alt="" width="30" height="24">
         </div>
     </div>
 </div>
@@ -226,6 +226,9 @@
     int totalItems = 6;
     int numOfItems = 0;
 
+    string filterImgSrc = "images/filter-svgrepo-com.svg";
+
+
     private void toggleApetizers()
     {
         if (appetizersToggle == true)
@@ -273,12 +276,21 @@
     private bool applyLunchToggle = false;
     private bool applyDessertsToggle = false;
 
-  
+
     private void applyFilterChanges()
     {
         applyAppetizersToggle = !appetizersToggle;
         applyLunchToggle = !lunchToggle;
         applyDessertsToggle = !dessertsToggle;
+
+        if(numOfItems < 6)
+        {
+            filterImgSrc = "images/filter-svgrepo-com-2.svg";
+        }
+        else
+        {
+            filterImgSrc = "images/filter-svgrepo-com.svg";
+        }
     }
 
 }

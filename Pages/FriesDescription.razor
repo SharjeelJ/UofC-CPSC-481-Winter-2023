@@ -47,7 +47,7 @@
 
 @code {
     private int currentCount = 1;
-    private string parameter = "fries@4@";
+    private string parameter = "fries@4";
 
     private void addToCart()
     {
@@ -65,7 +65,8 @@
             parameter += "@ketchup";
         }
 
-        UriHelper.NavigateTo($"/home/{parameter}");
+        UriHelper.NavigateTo($"/home/{parameter}", forceLoad: true);
+
     }
 
     private void IncrementCount()
