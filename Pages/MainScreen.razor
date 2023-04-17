@@ -211,12 +211,28 @@
 @code {
     private void NavigateTofries_description()
     {
-        NavigationManager.NavigateTo("/fries_description");
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/fries_description?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/fries_description", forceLoad: true);
+        }
     }
 
     private void NavigateToWings_description()
     {
-        NavigationManager.NavigateTo("/wings_description");
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/wings_description?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/wings_description", forceLoad: true);
+        }
     }
 
     private bool appetizersToggle = false;

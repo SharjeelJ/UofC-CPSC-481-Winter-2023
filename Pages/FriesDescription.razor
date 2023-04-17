@@ -65,7 +65,15 @@
             parameter += "@ketchup";
         }
 
-        UriHelper.NavigateTo($"/home/{parameter}", forceLoad: true);
+        if (UriHelper.Uri.Contains('@'))
+        {
+            String[] temp = UriHelper.Uri.Split('?');
+            UriHelper.NavigateTo("/?" + temp[temp.Length - 1] + $"${parameter}", forceLoad: true);
+        }
+        else
+        {
+            UriHelper.NavigateTo($"/?{parameter}", forceLoad: true);
+        }
 
     }
 

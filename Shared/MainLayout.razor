@@ -105,8 +105,8 @@
     {
         if (NavigationManager.Uri.Contains('@'))
         {
-            String[] temp = NavigationManager.Uri.Split('/');
-            NavigationManager.NavigateTo("/ReviewBill/" + temp[temp.Length - 1], forceLoad: true);
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/ReviewBill?" + temp[temp.Length - 1], forceLoad: true);
         }
         else
         {
@@ -138,21 +138,37 @@
 
     private void NavigateToCart()
     {
-        String[] temp = NavigationManager.Uri.Split('/');
-        NavigationManager.NavigateTo("/Cart/" + temp[temp.Length-1], forceLoad: true);
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/Cart?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/Cart", forceLoad: true);
+        }
+        
     }
 
     private void NavigateToDrinks()
     {
-        NavigationManager.NavigateTo("/Drinks", forceLoad: true);
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/Drinks?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/Drinks", forceLoad: true);
+        }
     }
 
     private void NavigateToHome()
     {
         if (NavigationManager.Uri.Contains('@'))
         {
-            String[] temp = NavigationManager.Uri.Split('/');
-            NavigationManager.NavigateTo("/home/" + temp[temp.Length - 1], forceLoad: true);
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/?" + temp[temp.Length - 1], forceLoad: true);
         } else
         {
             NavigationManager.NavigateTo("/", forceLoad: true);
