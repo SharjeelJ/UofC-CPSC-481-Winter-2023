@@ -18,14 +18,14 @@
                         <div class="navbar-nav me-auto mb-2 mb-lg-0">
                             @* Drinks button *@
                             <div class="nav-item">
-                                <a class="nav-link" aria-current="page" href="RefillDrinks">
+                                <a class="nav-link" aria-current="page" @onclick="toggleRefill">
                                     <img src="images/drink-straw-svgrepo-com.svg" alt="" width="30" height="24">
                                     @* <div>Drinks</div> *@
                                 </a>
                             </div>
                             @* Cart button *@
                             <div class="nav-item">
-                                <a class="nav-link" aria-current="page" href="Cart">
+                                <a class="nav-link" aria-current="page" @onclick="toggleCart">
                                     <img src="images/cart-basket-ui-5-svgrepo-com.svg" alt="" width="30" height="24">
                                     @* <div>Cart</div> *@
                                 </a>
@@ -77,6 +77,21 @@
     </main>
 </div>
 
+@if (ShowCart)
+{
+    <Cart hidden="" />
+}
+
+@if (ShowRefill)
+{
+    <RefillDrinks hidden="" />
+}
+
+@if (ShowOrders)
+{
+    <Orders hidden="" />
+}
+
 @code {
     private void NavigateToReviewBill()
     {
@@ -90,4 +105,15 @@
     {
         NavigationManager.NavigateTo("/RequestHelpLockScreen", forceLoad: true);
     }
+
+    [Parameter]
+    public bool ShowRefill { get; set; } = false;
+    [Parameter]
+    public bool ShowCart { get; set; } = false;
+    [Parameter]
+    public bool ShowOrders { get; set; } = false;
+
+    public void toggleRefill() => ShowRefill = !ShowRefill;
+    public void toggleCart() => ShowCart = !ShowCart;
+    public void toggleOrders() => ShowOrders = !ShowOrders;
 }
