@@ -45,23 +45,28 @@
                 <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <MudButton @onclick="NavigateToSelectLanguage" Variant="Variant.Filled" Style="background-color: #1B6EC2; color: white">English</MudButton>
+                            <select class="form-control" @bind="@selection">
+                                @foreach (var lang in langs)
+                                {
+                                    <option value=@lang>@lang</option>
+                                }
+                            </select>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body-main">
                             <div class="modal-body-1">
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Text" Size="Size.Large" Style="width: 80%; height: 75px; font-size:16px; border-radius: 25px; color:black;">Order# 7:27pm</MudButton>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
                             </div>
                             <div class="divider"></div>
                             <div class="modal-body-2">
-                                <MudButton @onclick="NavigateToRequestHelpLockScreen" Variant="Variant.Filled" Style="width: 80%; height: 100px ; font-size: 20px; border-radius: 25px; color:white; background-color:#6C757D">Request Help</MudButton>
+                                <button @onclick="NavigateToRequestHelpLockScreen" Style="width: 80%; height: 100px ; font-size: 20px; border: none; border-radius: 25px; color:white; background-color:#6C757D">Request Help</button>
                                 <div style="height:40px;"> </div>
-                                <MudButton @onclick="@NavigateToReviewBill" Variant="Variant.Filled" Style="width: 80%; height: 100px; font-size: 20px; border-radius: 25px; background-color: #1B6EC2; color:white;">Review Bill</MudButton>
+                                <button @onclick="@NavigateToReviewBill" Style="width: 80%; height: 100px; font-size: 20px; border: none; border-radius: 25px; background-color: #1B6EC2; color:white;">Review Bill</button>
 
                             </div>
                         </div>
@@ -115,4 +120,7 @@
     public void toggleRefill() => ShowRefill = !ShowRefill;
     public void toggleCart() => ShowCart = !ShowCart;
     public void toggleOrders() => ShowOrders = !ShowOrders;
+
+    List<string> langs = new List<string>() { "English", "Français", "Español", "吴语/吳語" };
+    private string selection = "English";
 }
