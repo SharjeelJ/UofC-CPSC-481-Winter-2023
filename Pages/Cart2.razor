@@ -4,57 +4,19 @@
     <h1>Your Cart</h1>
 </div>
 
+
 <div class="container-center">
 
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
+    @for (int id = 0; id < (items.Count) / 3; id = id + 3)
+    {
+        <div class="cart-item">
+            <button class="decrement" @onclick="() => decrement(id-3)">-</button>
+            <h4 for="@id" class="fd-amt">@items[id]</h4>
+            <button class="increment" @onclick="() => increment(id-3)">+</button>
+            <h4 class="fd-name">@items[id+1]</h4>
+            <h3 class="fd-price">@items[id+2]</h3>
+        </div>
+    }
 
 
 </div>
@@ -62,3 +24,39 @@
 <div class="place-order">
     <button>Place Order!</button>
 </div>
+
+@code {
+    List<string> items = new List<string>(){"1", "Steak", "$4.99"};
+
+
+    public void ButtonClicked(int ButtonID)
+    {
+        Console.WriteLine(ButtonID);
+    }
+
+    public void increment(int id)
+    {
+        items[id] = (int.Parse(items[id]) + 1).ToString();
+    }
+
+    public void decrement(int id)
+    {
+        int amount = int.Parse(items[id]) - 1;
+        if (amount == 0)
+        {
+            items.RemoveAt(id);
+            items.RemoveAt(id + 1);
+            items.RemoveAt(id + 2);
+        } else {
+            items[id] = amount.ToString();
+        }
+
+    }
+
+    public void updateCart(string amount, string name, string price)
+    {
+        items.Add(amount);
+        items.Add(name);
+        items.Add(price);
+    }
+}
