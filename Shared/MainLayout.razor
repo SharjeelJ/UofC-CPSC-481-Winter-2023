@@ -45,7 +45,12 @@
                 <div class="modal-dialog modal-fullscreen">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <MudButton @onclick="NavigateToSelectLanguage" Variant="Variant.Filled" Style="background-color: #1B6EC2; color: white">English</MudButton>
+                            <select class="form-control" @bind="@selection">
+                                @foreach (var lang in langs)
+                                {
+                                    <option value=@lang>@lang</option>
+                                }
+                            </select>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body-main">
@@ -92,6 +97,10 @@
 }
 
 @code {
+    List<string> langs = new List<string>() { "English", "Français", "Español", "吴语/吳語"};
+    private string selection = "English";
+
+
     private void NavigateToReviewBill()
     {
         NavigationManager.NavigateTo("/ReviewBill", forceLoad:true);

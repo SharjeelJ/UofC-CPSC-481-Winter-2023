@@ -7,8 +7,8 @@
         <h1>Order ETA: @timeETA min</h1>
         <p>Your oder is on the way! Use the buttons below to request a Refill or request assistance from a server.</p>
         <p id="break_line">________________________________________________</p>
-        <input type="button" value="Request Help" @onclick="showNotification" />
-        <input type="button" value="Order Drink" onclick="window.location.href='/finished_lock_screen';" />
+        <input type="button" value=@requestHelp @onclick="showNotification" />
+        <input type="button" value="Order More" onclick="window.location.href='/';" />
     </div>
 
     <div class="notification" style=@displayStatus @onclick="hideNotification">
@@ -20,6 +20,7 @@
 @code {
     private int timeETA = 10;
     string displayStatus = "display: none;";
+    string requestHelp = "Request Help";
 
     private void hideNotification()
     {
@@ -28,7 +29,15 @@
 
     private void showNotification()
     {
-        displayStatus = "";
+        if (requestHelp == "Request Help")
+        {
+            requestHelp = "Are you sure?";
+        }
+        else
+        {
+            displayStatus = "";
+            requestHelp = "Request Help";
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿@page "/fries_description"
+@inject NavigationManager UriHelper
 
 <PageTitle>Fries</PageTitle>
 <div id="description_screen">
@@ -21,11 +22,11 @@
         
         <h2>Item Customization</h2>
         <div id="checkbox">
-            <input type="checkbox" id="item1">
+            <input type="checkbox" id="item1" @onclick="toggleBox1">
             <label for="item1"> No salt </label><br>
-            <input type="checkbox" id="item2">
+            <input type="checkbox" id="item2" @onclick="toggleBox2">
             <label for="item2"> Waffle Fries </label><br>
-            <input type="checkbox" id="item3">
+            <input type="checkbox" id="item3" @onclick="toggleBox3">
             <label for="item3"> Ketchup </label><br><br />
         </div>
         
@@ -40,12 +41,32 @@
         <label id="count"> @currentCount </label>
         <button id="increment" @onclick="IncrementCount">+</button> <br />
         
-        <button id="cart">Add to cart</button>
+        <button id="cart" @onclick="addToCart">Add to cart</button>
     </div>
 </div>
 
 @code {
     private int currentCount = 1;
+    private string parameter = "fries";
+
+    private void addToCart()
+    {
+        parameter += "@" + currentCount;
+        if(box1)
+        {
+            parameter += "@no_salt";
+        }
+        if(box2)
+        {
+            parameter += "@waffle_fries";
+        }
+        if (box3)
+        {
+            parameter += "@ketchup";
+        }
+
+        UriHelper.NavigateTo($"/home/{parameter}");
+    }
 
     private void IncrementCount()
     {
@@ -57,4 +78,22 @@
         if(currentCount > 1)
             currentCount--;
     }
+
+    private bool box1 = false;
+    private bool box2 = false;
+    private bool box3 = false;
+
+    private void toggleBox1()
+    {
+        box1 = !box1;
+    }
+    private void toggleBox2()
+    {
+        box2 = !box2;
+    }
+    private void toggleBox3()
+    {
+        box3 = !box3;
+    }
+
 }
