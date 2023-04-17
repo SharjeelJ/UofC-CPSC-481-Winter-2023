@@ -64,7 +64,8 @@
                             </div>
                             <div class="divider" style="position: relative; top: 30px; opacity: 30%;"></div>
                             <div class="modal-body-2">
-                                <button @onclick="NavigateToRequestHelpLockScreen" Style="width: 80%; height: 100px ; font-size: 20px; border: none; border-radius: 10px; color:white; background-color:#6C757D">Request Help</button>
+                                <button @onclick="@RequestHelp" Style="width: 80%; height: 100px ; font-size: 20px; border: none; border-radius: 10px; color:white; background-color:#6C757D">Request Help</button>
+                                <div style="padding-top: 10px;color: darkred; text-align:center;" hidden="@requestHelpHidden">Help Requested, a waiter will be on their way shortly</div>
                                 <div style="height:50px;"> </div>
                                 <button @onclick="@NavigateToReviewBill" Style="width: 80%; height: 100px; font-size: 20px; border: none; border-radius: 10px; background-color: #1B6EC2; color:white;">Review Bill</button>
 
@@ -131,15 +132,20 @@
     {
         NavigationManager.NavigateTo("/SelectLanguage", forceLoad: true);
     }
-    private void NavigateToRequestHelpLockScreen()
+
+    bool requestHelpHidden = true;
+    async Task RequestHelp()
     {
-        NavigationManager.NavigateTo("/RequestHelpLockScreen", forceLoad: true);
+        requestHelpHidden = false;
+        await Task.Delay(5000);
+        requestHelpHidden = true;
     }
 
     string cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
 
     protected override void OnInitialized()
     {
+        
         if (NavigationManager.Uri.Contains("@"))
         {
             cartIcon = "images/cart-basket-ui-4-svgrepo-com.svg";
