@@ -7,21 +7,24 @@
     </div>
 
     <MudDivider></MudDivider>
-    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
-    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
-    <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+        <div class="OrderedItemsWrapper" hidden="!@itemsOrdered">
+            <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+            <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+            <ByteSize.Components.OrderedItem></ByteSize.Components.OrderedItem>
+        </div>
+    <div hidden="@itemsOrdered" style="text-align: center; color:darkred">No items have been ordered yet!</div>
     <MudDivider></MudDivider>
 
     <div id="cost-calculation-holder" style="display:flex; justify-content:end;">
         <div id="cost-calculation" style="padding: 20px;">
-            <div id="tax" style="text-align:end; padding-bottom: 5px">Tax: $X</div>
-            <div id="GST" style="text-align:end;  padding-bottom: 5px; border-bottom: 1px dotted black;">GST: $X</div>
-            <div id="Total-cost" style="font-weight: 600; font-size: larger; padding-top: 5px">Total: $X</div>
+            <div id="tax" style="text-align:end; padding-bottom: 5px">Tax: $0</div>
+            <div id="GST" style="text-align:end;  padding-bottom: 5px; border-bottom: 1px dotted black;">GST: $0</div>
+            <div id="Total-cost" style="font-weight: 600; font-size: larger; padding-top: 5px">Total: $0</div>
         </div>
     </div>
     
     <div id="request-bill-holder" style="display: flex; justify-content:center; padding: 15px;">
-        <MudButton @onclick="@NavigateToPage" Variant="Variant.Filled" Size="Size.Large" Style="border-radius: 5px; background-color:midnightblue; color:white; width:200px; padding: 10px 0px;">Request Bill</MudButton>
+        <button @onclick="@NavigateToBillRequested" Style="width: 80%; height: 75px; font-size: 20px; border: none; border-radius: 25px; background-color: #1B6EC2; color:white;">Request Bill</button>
     </div>
 
 
@@ -30,8 +33,19 @@
 
 
 @code {
-    private void NavigateToPage()
+    private void NavigateToBillRequested()
     {
         NavigationManager.NavigateTo("/BillRequested");
     }
+
+    bool itemsOrdered = false;
+
+    private void checkItemsOrdered()
+    {
+        //if (ItemsOrdered == true)
+        //{
+        //    noItemsOrdered = true;
+        //}
+    }
+   
 }
