@@ -65,7 +65,8 @@
             parameter += "@ketchup";
         }
 
-        UriHelper.NavigateTo($"/home/{parameter}");
+        UriHelper.NavigateTo($"/home/{parameter}", forceLoad: true);
+
     }
 
     private void IncrementCount()

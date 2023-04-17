@@ -113,8 +113,24 @@
     {
         NavigationManager.NavigateTo("/RequestHelpLockScreen", forceLoad: true);
     }
+
+    string cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
+
+    protected override void OnInitialized()
+    {
+        if (NavigationManager.Uri.Contains("@"))
+        {
+            cartIcon = "images/cart-basket-ui-4-svgrepo-com.svg";
+        }
+        else
+        {
+            cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
+        }
+    }    
+
     private void NavigateToCart()
     {
+        
         String[] temp = NavigationManager.Uri.Split('/');
         NavigationManager.NavigateTo("/Cart/" + temp[temp.Length-1], forceLoad: true);
     }
@@ -137,10 +153,7 @@
     public void toggleCart() => ShowCart = !ShowCart;
     public void toggleOrders() => ShowOrders = !ShowOrders;
 
-    List<string> langs = new List<string>() { "English", "Français", "Español", "吴语/吳語" };
-    private string selection = "English";
 
-    string cartIcon = "images/cart-basket-ui-5-svgrepo-com.svg";
 
     
 }

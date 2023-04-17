@@ -75,7 +75,7 @@
             parameter += "@hot_sauce";
         }
 
-        UriHelper.NavigateTo($"/home/{value}{parameter}");
+        UriHelper.NavigateTo($"/home/{value}{parameter}", forceLoad: true);
     }
 
 
