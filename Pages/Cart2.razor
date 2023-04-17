@@ -1,64 +1,63 @@
 ﻿@page "/Cart"
+@inject NavigationManager NavigationManager
 
 <div class="page-title">
     <h1>Your Cart</h1>
 </div>
 
+
 <div class="container-center">
 
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
-    <div class="cart-item">
-        <button class="decrement">-</button>
-        <h4 class="fd-amt">1</h4>
-        <button class="increment">+</button>
-        <h4 class="fd-name">Food item #1</h4>
-        <h3 class="fd-price">$10</h3>
-    </div>
+        @if (NavigationManager.Uri.Contains('@'))
+        {
+        
 
+        String CartInfo = NavigationManager.Uri.Split("?")[1];
+        String[] _items = CartInfo.Split("$");
+        int x = 0;
+        int id = 0;
+        foreach (var _item in _items)
+        {
+            Console.WriteLine(_item);
+            String[] itemDescriptions = _item.Split("@");
+            
 
+            <div class="cart-item">
+                <button class="decrement" @onclick="() => decrement(0)">-</button>
+                @if (id == 0)
+                {
+                    amount.Add(int.Parse(itemDescriptions[x + 2]));
+                    <h4 class="fd-amt">@amount[id]</h4>
+                } else {
+                    <h4 class="fd-amt">@itemDescriptions[x+2]</h4>
+                }                
+                <button class="increment" @onclick="() => increment(0)">+</button>
+                <h4 class="fd-name">@itemDescriptions[x]</h4>
+                <h3 class="fd-price">@("$" + itemDescriptions[x+1])</h3>
+            </div>
+            id = id + 1;
+        }  
+        
+    }
 </div>
 
 <div class="place-order">
     <button>Place Order!</button>
 </div>
+
+@code {
+    List<int> amount = new List<int>();
+
+    public void increment(int id)
+    {
+        amount[id] = amount[id] + 1;
+    }
+
+    public void decrement(int id)
+    {
+        if (amount[id] != 1)
+        {
+            amount[id] = amount[id] - 1;
+        }
+    }
+}

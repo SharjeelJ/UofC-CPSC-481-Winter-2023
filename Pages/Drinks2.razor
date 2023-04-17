@@ -1,5 +1,5 @@
 ﻿@page "/Drinks"
-
+@inject NavigationManager UriHelper
 
 <div class="page-title">
     <h2>Order/Refill Drink</h2>
@@ -8,27 +8,27 @@
 
 <div class="container-center">
     <div class="drink-item">
-        <h4>Tap Water</h4>
+        <h4>Water</h4>
+        <h3>$0</h3>
+        <button class="refill-btn" @onclick="addToCart">Add</button>
+    </div>
+    <div class="drink-item">
+        <h4>Sprite</h4>
         <h3>$0</h3>
         <button class="refill-btn">Add</button>
     </div>
     <div class="drink-item">
-        <h4>Drink2</h4>
+        <h4>Pepsi</h4>
         <h3>$0</h3>
         <button class="refill-btn">Add</button>
     </div>
     <div class="drink-item">
-        <h4>Drink3</h4>
+        <h4>Fanta</h4>
         <h3>$0</h3>
         <button class="refill-btn">Add</button>
     </div>
     <div class="drink-item">
-        <h4>Drink3</h4>
-        <h3>$0</h3>
-        <button class="refill-btn">Add</button>
-    </div>
-    <div class="drink-item">
-        <h4>Drink4</h4>
+        <h4>Root Beer</h4>
         <h3>$0</h3>
         <button class="refill-btn">Add</button>
     </div>
@@ -36,5 +36,18 @@
 
 
 @code {
+    private string parameter = "Water@1.99@1";
 
+    private void addToCart()
+    {
+        if (UriHelper.Uri.Contains('@'))
+        {
+            String[] temp = UriHelper.Uri.Split('?');
+            UriHelper.NavigateTo("/?" + temp[temp.Length - 1] + $"${parameter}", forceLoad: true);
+        }
+        else
+        {
+            UriHelper.NavigateTo($"/?{parameter}", forceLoad: true);
+        }        
+    }
 }
