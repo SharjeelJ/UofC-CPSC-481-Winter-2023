@@ -15,20 +15,27 @@
         String CartInfo = NavigationManager.Uri.Split("?")[1];
         String[] _items = CartInfo.Split("$");
         int x = 0;
+        int id = 0;
         foreach (var _item in _items)
         {
+            Console.WriteLine(_item);
             String[] itemDescriptions = _item.Split("@");
-            amount.Add(int.Parse(itemDescriptions[x + 2]));
+            
 
             <div class="cart-item">
                 <button class="decrement" @onclick="() => decrement(0)">-</button>
-                <h4 class="fd-amt">@amount[x]</h4>
+                @if (id == 0)
+                {
+                    amount.Add(int.Parse(itemDescriptions[x + 2]));
+                    <h4 class="fd-amt">@amount[id]</h4>
+                } else {
+                    <h4 class="fd-amt">@itemDescriptions[x+2]</h4>
+                }                
                 <button class="increment" @onclick="() => increment(0)">+</button>
                 <h4 class="fd-name">@itemDescriptions[x]</h4>
                 <h3 class="fd-price">@("$" + itemDescriptions[x+1])</h3>
             </div>
-
-            x = x + 1;
+            id = id + 1;
         }  
         
     }
