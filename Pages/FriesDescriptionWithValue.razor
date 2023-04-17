@@ -1,36 +1,33 @@
-﻿@page "/wings_description"
+﻿@page "/fries_description/{value}"
 @inject NavigationManager UriHelper
 
-<PageTitle>Wings</PageTitle>
+<PageTitle>Fries</PageTitle>
 <div id="description_screen">
     <div id="description_header">
-        <h1>Wings</h1>
-        <h2>$12.99</h2>
+        <h1>Fries</h1>
+        <h2>$4.99</h2>
     </div>
     
-    <img src="./images/wings.jpeg" id="image"/>
+    <img src="./images/fries.jpeg" id="image"/>
     <div id="description">
-        <p>We use only the highest quality chicken and cook our wings to perfection to ensure that they're always tender and flavorful. And with a variety of dipping sauces available, you can customize your wings to your heart's content.</p>
+        <p>All our fries are made in-house and we use only the finest, locally grown potatoes. Try our house-made fries which offers a delicious and authentic Canadian taste!</p>
         <h2>Ingredients</h2>
          <ul>
-            <li>Chicken wings</li>
-            <li>Salt</li>
-            <li>Pepper</li>
+            <li>salt</li>
+            <li>cheese</li>
+            <li>potato</li>
         </ul> 
         <h2>Dietary Considerations</h2>
         <p>Gluten Free</p>
         
         <h2>Item Customization</h2>
-
         <div id="checkbox">
             <input type="checkbox" id="item1" @onclick="toggleBox1">
             <label for="item1"> No salt </label><br>
             <input type="checkbox" id="item2" @onclick="toggleBox2">
-            <label for="item2"> Honey garlic sauce </label><br>
+            <label for="item2"> Waffle Fries </label><br>
             <input type="checkbox" id="item3" @onclick="toggleBox3">
-            <label for="item3"> Ketchup </label><br>
-            <input type="checkbox" id="item4" @onclick="toggleBox4">
-            <label for="item4"> Hot Sauce </label><br><br />
+            <label for="item3"> Ketchup </label><br><br />
         </div>
         
         <h2>Special Instructions</h2>
@@ -50,32 +47,29 @@
 
 @code {
     private int currentCount = 1;
-    private string parameter = "wings";
+    private string parameter = "$fries";
 
+    [Parameter]
+    public string value { get; set; }
 
     private void addToCart()
     {
         parameter += "@" + currentCount;
-        if (box1)
+        if(box1)
         {
             parameter += "@no_salt";
         }
-        if (box2)
+        if(box2)
         {
-            parameter += "@honey_garlic_sauce";
+            parameter += "@waffle_fries";
         }
         if (box3)
         {
             parameter += "@ketchup";
         }
-        if(box4)
-        {
-            parameter += "@hot_sauce";
-        }
 
-        UriHelper.NavigateTo($"/home/{parameter}");
+        UriHelper.NavigateTo($"/home/{value}{parameter}");
     }
-
 
     private void IncrementCount()
     {
@@ -91,7 +85,6 @@
     private bool box1 = false;
     private bool box2 = false;
     private bool box3 = false;
-    private bool box4 = false;
 
     private void toggleBox1()
     {
@@ -105,8 +98,5 @@
     {
         box3 = !box3;
     }
-    private void toggleBox4()
-    {
-        box4 = !box4;
-    }
+
 }

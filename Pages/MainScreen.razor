@@ -19,7 +19,7 @@
 @* Menu items *@
 <div id="AppetizersWrapper" hidden="@applyAppetizersToggle">
     <div class="list-group" style="margin-left: -24px; margin-right: -24px">
-        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0" @onclick="NavigateToWings_description">
             <div class="flex-shrink-0">
                 <img src="images/wings.jpeg" height="80" alt="...">
             </div>
@@ -212,6 +212,11 @@
     private void NavigateTofries_description()
     {
         NavigationManager.NavigateTo("/fries_description");
+    }
+
+    private void NavigateToWings_description()
+    {
+        NavigationManager.NavigateTo("/wings_description");
     }
 
     private bool appetizersToggle = false;

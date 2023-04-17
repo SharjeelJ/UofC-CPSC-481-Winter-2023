@@ -1,4 +1,4 @@
-﻿@page "/wings_description"
+﻿@page "/wings_description/{value}"
 @inject NavigationManager UriHelper
 
 <PageTitle>Wings</PageTitle>
@@ -50,8 +50,10 @@
 
 @code {
     private int currentCount = 1;
-    private string parameter = "wings";
+    private string parameter = "$wings";
 
+    [Parameter]
+    public string value { get; set; }
 
     private void addToCart()
     {
@@ -73,7 +75,7 @@
             parameter += "@hot_sauce";
         }
 
-        UriHelper.NavigateTo($"/home/{parameter}");
+        UriHelper.NavigateTo($"/home/{value}{parameter}");
     }
 
 

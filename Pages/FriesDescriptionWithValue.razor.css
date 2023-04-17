@@ -23,7 +23,7 @@ input {
 
 img {
     display: block;
-    margin: auto;
+    margin:auto;
     width: 85%;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -75,3 +75,4 @@ h2 {
 #description_header {
     padding-top: 20px;
 }
+
