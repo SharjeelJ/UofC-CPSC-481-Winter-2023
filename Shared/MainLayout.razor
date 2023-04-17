@@ -97,6 +97,10 @@
 }
 
 @code {
+    List<string> langs = new List<string>() { "English", "Français", "Español", "吴语/吳語"};
+    private string selection = "English";
+
+
     private void NavigateToReviewBill()
     {
         NavigationManager.NavigateTo("/ReviewBill", forceLoad:true);
@@ -111,7 +115,8 @@
     }
     private void NavigateToCart()
     {
-        NavigationManager.NavigateTo("/Cart", forceLoad: true);
+        String[] temp = NavigationManager.Uri.Split('/');
+        NavigationManager.NavigateTo("/Cart/" + temp[temp.Length-1], forceLoad: true);
     }
     private void NavigateToDrinks()
     {
