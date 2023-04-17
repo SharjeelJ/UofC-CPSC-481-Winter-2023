@@ -1,0 +1,109 @@
+﻿.container-center {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    left: 0;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 150px;
+    max-width: 420px;
+}
+
+.cart-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    border-bottom: 1px solid #a7a1a1;
+    padding: 4px 4px;
+    margin-left: 8%;
+    margin-right: 10%;
+}
+
+.place-order {
+    position: absolute;
+    position: fixed;
+    right: 0;
+    top: 820px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 420px;
+}
+
+.page-title {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 30px;
+    max-width: 420px;
+}
+
+h3 {
+    margin-top: 15px;
+    margin-left: 70px;
+    color: #115600;
+}
+
+h4 {
+    margin-top: 15px;
+}
+
+button {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 1px 9px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: white;
+    font-weight: 600;
+}
+
+.decrement {
+    background-color: #fb5656;
+    position: absolute;
+    left: 4%;
+    margin-top: -35px;
+}
+
+.increment {
+    background-color: #5be262;
+    position: absolute;
+    left: 16%;
+    margin-top: -35px;
+}
+
+.fd-amt {
+    position: absolute;
+    left: 15%;
+    margin-top: -30px;
+}
+
+.fd-name {
+    position: absolute;
+    left: 30%;
+    margin-top: -30px;
+}
+
+.fd-price {
+    position: absolute;
+    right: 10%;
+    margin-top: -30px;
+}
+
+.place-order button {
+    padding: 10px 24px;
+    border-radius: 20px;
+    box-shadow: 0 0px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: lightseagreen;
+    color: white;
+}

@@ -17,28 +17,30 @@
 <hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
 
 @* Menu items *@
-<div class="list-group" style="margin-left: -24px; margin-right: -24px">
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
-        <div class="flex-shrink-0">
-            <img src="images/wings.jpeg" height="80" alt="...">
+<div id="AppetizersWrapper" hidden="@applyAppetizersToggle">
+    <div class="list-group" style="margin-left: -24px; margin-right: -24px">
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+            <div class="flex-shrink-0">
+                <img src="images/wings.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Wings</div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Chicken wings, cayenne pepper, butter</div>
+            </div>
+            <div class="flex-grow-1">$7</div>
         </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Wings</div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Chicken wings, cayenne pepper, butter</div>
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0" @onclick="NavigateTofries_description">
+            <div class="flex-shrink-0">
+                <img src="images/fries.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Fries <img src="images/gluten-free.png" height="24" alt="..."></div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Potatoes, vegetable oil, salt</div>
+            </div>
+            <div class="flex-grow-1">$4</div>
         </div>
-        <div class="flex-grow-1">$7</div>
-    </div>
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0" @onclick="NavigateTofries_description">
-        <div class="flex-shrink-0">
-            <img src="images/fries.jpeg" height="80" alt="...">
-        </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Fries <img src="images/gluten-free.png" height="24" alt="..."></div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Potatoes, vegetable oil, salt</div>
-        </div>
-        <div class="flex-grow-1">$4</div>
     </div>
 </div>
 
@@ -48,62 +50,64 @@
 <hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
 
 @* Menu items *@
-<div class="list-group" style="margin-left: -24px; margin-right: -24px">
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
-        <div class="flex-shrink-0">
-            <img src="images/burger.jpeg" height="80" alt="...">
+<div id="lunchWrapper" hidden="@applyLunchToggle">
+    <div class="list-group" style="margin-left: -24px; margin-right: -24px">
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+            <div class="flex-shrink-0">
+                <img src="images/burger.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Chicken Burger</div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Chicken patty, bun, lettuce, tomatoes</div>
+            </div>
+            <div class="flex-grow-1">$12</div>
         </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Chicken Burger</div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Chicken patty, bun, lettuce, tomatoes</div>
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+            <div class="flex-shrink-0">
+                <img src="images/wrap.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Pita Wrap</div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Chicken, whole wheat pita, garlic sauce, tzatziki sauce</div>
+            </div>
+            <div class="flex-grow-1">$10</div>
         </div>
-        <div class="flex-grow-1">$12</div>
-    </div>
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
-        <div class="flex-shrink-0">
-            <img src="images/wrap.jpeg" height="80" alt="...">
-        </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Pita Wrap</div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Chicken, whole wheat pita, garlic sauce, tzatziki sauce</div>
-        </div>
-        <div class="flex-grow-1">$10</div>
     </div>
 </div>
-
 @* Menu section header *@
 <hr class="mt-0 mb-0 opacity-100" style="margin-left: -24px; margin-right: -24px">
 <h4 class="text-center">Desserts</h4>
 <hr class="mt-0 mb-1 opacity-100" style="margin-left: -24px; margin-right: -24px">
 
 @* Menu items *@
-<div class="list-group" style="margin-left: -24px; margin-right: -24px">
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
-        <div class="flex-shrink-0">
-            <img src="images/chocolate-cake.jpeg" height="80" alt="...">
+<div id="dessertsWrapper" hidden="@applyDessertsToggle">
+    <div class="list-group" style="margin-left: -24px; margin-right: -24px">
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+            <div class="flex-shrink-0">
+                <img src="images/chocolate-cake.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Chocolate Cake</div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Contains wheat, milk, egg, soy</div>
+            </div>
+            <div class="flex-grow-1">$5</div>
         </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Chocolate Cake</div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Contains wheat, milk, egg, soy</div>
+        <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
+            <div class="flex-shrink-0">
+                <img src="images/carrot-cake.jpeg" height="80" alt="...">
+            </div>
+            <div class="container-fluid">
+                <div class="flex-grow-1 h6">Carrot Cake</div>
+                <div>&nbsp</div>
+                <div class="flex-grow-1 small text-muted">Sugar, corn syrup, carrot flavored pieces</div>
+            </div>
+            <div class="flex-grow-1">$4</div>
         </div>
-        <div class="flex-grow-1">$5</div>
-    </div>
-    <div class="d-flex align-items-center list-group-item list-group-item-action border-0">
-        <div class="flex-shrink-0">
-            <img src="images/carrot-cake.jpeg" height="80" alt="...">
-        </div>
-        <div class="container-fluid">
-            <div class="flex-grow-1 h6">Carrot Cake</div>
-            <div>&nbsp</div>
-            <div class="flex-grow-1 small text-muted">Sugar, corn syrup, carrot flavored pieces</div>
-        </div>
-        <div class="flex-grow-1">$4</div>
     </div>
 </div>
-
 @* Menu filters modal *@
 <div class="modal fade" id="MenuFiltersModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="MenuFiltersModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -119,13 +123,13 @@
                         <label class="list-group-item">
                             <div class="row justify-content-between">
                                 <div class="col"><img src="images/french-fries-svgrepo-com.svg" height="30" alt="..."> Appetizers</div>
-                                <input class="col-auto form-check-input me-1" type="checkbox">
+                                <input class="col-auto form-check-input me-1" type="checkbox" @onclick="toggleApetizers">
                             </div>
                         </label>
                         <label class="list-group-item">
                             <div class="row justify-content-between">
                                 <div class="col"><img src="images/lunch-svgrepo-com.svg" height="30" alt="..."> Lunch</div>
-                                <input class="col-auto form-check-input me-1" type="checkbox">
+                                <input class="col-auto form-check-input me-1" type="checkbox" @onclick="toggleLunch">
                             </div>
                         </label>
                         <label class="list-group-item">
@@ -137,7 +141,7 @@
                         <label class="list-group-item">
                             <div class="row justify-content-between">
                                 <div class="col"><img src="images/tiramisu-cake-1-svgrepo-com.svg" height="30" alt="..."> Desserts</div>
-                                <input class="col-auto form-check-input me-1" type="checkbox">
+                                <input class="col-auto form-check-input me-1" type="checkbox" @onclick="toggleDesserts">
                             </div>
                         </label>
                     </div>
@@ -197,8 +201,8 @@
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <h6 class="align-self-center">6/30 Items</h6>
-                <button type="button" class="btn btn-primary">Apply Changes</button>
+                <h6 class="align-self-center">@numOfItems/@totalItems Items</h6>
+                <button type="button" class="btn btn-primary" @onclick="applyFilterChanges">Apply Changes</button>
             </div>
         </div>
     </div>
@@ -208,6 +212,68 @@
     private void NavigateTofries_description()
     {
         NavigationManager.NavigateTo("/fries_description");
+    }
+
+    private bool appetizersToggle = false;
+    private bool lunchToggle = false;
+    private bool dessertsToggle = false;
+
+    int totalItems = 6;
+    int numOfItems = 0;
+
+    private void toggleApetizers()
+    {
+        if (appetizersToggle == true)
+        {
+            numOfItems = numOfItems - 2;
+        }
+        else
+        {
+            numOfItems = numOfItems + 2;
+        }
+
+        appetizersToggle = !appetizersToggle;
+    }
+
+    private void toggleLunch()
+    {
+
+        if (lunchToggle == true)
+        {
+            numOfItems = numOfItems - 2;
+        }
+        else
+        {
+            numOfItems = numOfItems + 2;
+        }
+
+        lunchToggle = !lunchToggle;
+    }
+
+    private void toggleDesserts()
+    {
+        if (dessertsToggle == true)
+        {
+            numOfItems = numOfItems - 2;
+        }
+        else
+        {
+            numOfItems = numOfItems + 2;
+        }
+
+        dessertsToggle = !dessertsToggle;
+    }
+
+    private bool applyAppetizersToggle = false;
+    private bool applyLunchToggle = false;
+    private bool applyDessertsToggle = false;
+
+  
+    private void applyFilterChanges()
+    {
+        applyAppetizersToggle = !appetizersToggle;
+        applyLunchToggle = !lunchToggle;
+        applyDessertsToggle = !dessertsToggle;
     }
 
 }
