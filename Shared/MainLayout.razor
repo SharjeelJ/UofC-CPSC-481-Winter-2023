@@ -55,12 +55,12 @@
                         </div>
                         <div class="modal-body-main">
                             <div class="modal-body-1">
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
-                                <button class="order-button" @onclick="@NavigateToReviewBill">Order# 7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBillPostPay">Order 1   7:27pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBillPostPay">Order 2   7:30pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBillPostPay">Order 3   7:35pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBillPostPay">Order 4   7:40pm</button>
+                                <button class="order-button" @onclick="@NavigateToReviewBillPostPay">Order 5   7:45pm</button>
+                             
                             </div>
                             <div class="divider" style="position: relative; top: 30px; opacity: 30%;"></div>
                             <div class="modal-body-2">
@@ -113,6 +113,20 @@
             NavigationManager.NavigateTo("/ReviewBill", forceLoad: true);
         }
     }
+
+    private void NavigateToReviewBillPostPay()
+    {
+        if (NavigationManager.Uri.Contains('@'))
+        {
+            String[] temp = NavigationManager.Uri.Split('?');
+            NavigationManager.NavigateTo("/ReviewBillPostPay?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/ReviewBillPostPay", forceLoad: true);
+        }
+    }
+
     private void NavigateToSelectLanguage()
     {
         NavigationManager.NavigateTo("/SelectLanguage", forceLoad: true);

@@ -1,4 +1,4 @@
-﻿@page "/ReviewBill"
+﻿@page "/ReviewBillPostPay"
 @inject NavigationManager NavigationManager
 
 <div id="main-container" style="display: grid">
@@ -7,24 +7,24 @@
     </div>
 
     <MudDivider></MudDivider>
-        <div class="OrderedItemsWrapper" hidden="@itemsOrdered">
-            @foreach (var item in orderedItems)
-            {
-                <div class="orderedItem" style="display: flex; justify-content: space-between; padding: 20px 10px;">
-                    <div id="orderedItem-group1" style="display: flex; margin-left: 20px;">
-                        <div id="orderedItem-count" style="display: flex; align-items: center;  margin-right: 10px; padding:5px; border: 2px solid black;">@item.quantity</div>
-                         <div style="inline-flex">
-                            <div id="orderedItem-name" style="display: flex; align-items: center;">@item.name</div>
-                            <div id="orderedItem-customizations" style="display: flex; align-items: center;">@item.customizations</div>
-                        </div>
+    <div class="OrderedItemsWrapper" hidden="@itemsOrdered">
+        @foreach (var item in orderedItems)
+        {
+            <div class="orderedItem" style="display: flex; justify-content: space-between; padding: 20px 10px;">
+                <div id="orderedItem-group1" style="display: flex; margin-left: 20px;">
+                    <div id="orderedItem-count" style="display: flex; align-items: center;  margin-right: 10px; padding:5px; border: 2px solid black;">@item.quantity</div>
+                    <div style="inline-flex">
+                        <div id="orderedItem-name" style="display: flex; align-items: center;">@item.name</div>
+                        <div id="orderedItem-customizations" style="display: flex; align-items: center;">@item.customizations</div>
                     </div>
-                    <div id="orderedItem-group2" style="display: flex; align-items: center;">
-                        <div id="orderedItem-cost" style="margin-right: 20px; ">$ @item.price</div>
-                    </div>
-
+                </div>
+                <div id="orderedItem-group2" style="display: flex; align-items: center;">
+                    <div id="orderedItem-cost" style="margin-right: 20px; ">$ @item.price</div>
                 </div>
 
-            }
+            </div>
+
+        }
     </div>
     <div hidden="@noitemsOrdered" style="text-align: center; color:darkred">No items have been ordered yet!</div>
     <MudDivider></MudDivider>
@@ -35,10 +35,6 @@
             <div id="Total-cost" style="font-weight: 600; font-size: larger; padding-top: 5px">Total: $ @totalPrice</div>
         </div>
     </div>
-    
-    <div id="request-bill-holder" style="display: flex; justify-content:center; padding: 15px;">
-        <button @onclick="@NavigateToBillRequested" Style="width: 80%; height: 75px; font-size: 20px; border: none; border-radius: 25px; background-color: #1B6EC2; color:white;">Request Bill</button>
-    </div>
 
 
 </div>
@@ -46,16 +42,16 @@
 
 
 @code {
-        private void NavigateToBillRequested()
-        {
-            NavigationManager.NavigateTo("/BillRequested");
-        }
+    private void NavigateToBillRequested()
+    {
+        NavigationManager.NavigateTo("/BillRequested");
+    }
 
-        static bool itemsOrdered = false;
-        bool noitemsOrdered = !itemsOrdered;
-        double totalPrice;
-        double tax = 0;
-        double taxPercentage = 0.05;
+    static bool itemsOrdered = false;
+    bool noitemsOrdered = !itemsOrdered;
+    double totalPrice;
+    double tax = 0;
+    double taxPercentage = 0.05;
 
     public class MenuItem
     {
@@ -87,7 +83,7 @@
             totalPrice = 0;
             tax = 0;
 
-            foreach(var item in items)
+            foreach (var item in items)
             {
                 String itemName = "";
                 String itemPrice = "";
@@ -95,13 +91,13 @@
                 String itemCustomizations = "";
                 String[] itemDescriptions = item.Split("@");
 
-                for(int i=0; i<itemDescriptions.Length; i++)
+                for (int i = 0; i < itemDescriptions.Length; i++)
                 {
-                    if (i==0)
+                    if (i == 0)
                     {
                         itemName = itemDescriptions[i];
                     }
-                    else if(i==1)
+                    else if (i == 1)
                     {
                         itemPrice = itemDescriptions[i];
 
@@ -116,7 +112,7 @@
                     {
                         if (itemCustomizations == "")
                         {
-                            itemCustomizations = itemDescriptions[i]; 
+                            itemCustomizations = itemDescriptions[i];
                         }
                         else
                         {
