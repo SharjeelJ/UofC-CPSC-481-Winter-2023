@@ -1,0 +1,51 @@
+Hi there,
+
+Are you tired of waiting for your server to take your orders at your favourite restaurant?
+Do you find it frustrating when your server forgets to check up on you when you just want
+water?
+
+Well, we have a solution for you!
+
+Introducing our new mobile app that will make ordering food a breeze at our restaurant.
+
+With our app, customers can easily browse the menu, place their orders, and ask for
+assistance, all without the hassle or the embarrassment of shouting to get your server's
+attention.
+
+Our application is very simple.
+
+Once you download our application, simply sit down at your table and the application wiil
+detect the table and get started!
+
+Our menu is assorted in different categories and you can easily filter to find the food
+you want!
+
+Now let's order some fries.
+
+To customize your order, simply tap on the checkboxes and add to our cart.
+
+Once we are satisfied with our order, we can navigate to the checkout button.
+
+here, we can make modifications to our order before we submit our order.
+
+Once we are happy with our order, click on the confirmation button.
+
+If we go back to our notifications page, we will now be able to see roughly how long
+the food will take to arrive to your table.
+
+From the notifications tab, you also have the option to request help, or order more food.
+
+Let's request a water refill.
+
+This button navigates us to the drink menu where we can easily request more water.
+
+Once the server brings the ordered food to the table, the notification will change 
+so that you can now request the final bill before you leave the restaurant.
+
+Once we click this button, we can see the final price before the server brings you your 
+final bill.
+
+Don't waste any more time trying to flag a server to take your order. 
+Download our app now and enjoy the convenience of ordering food from your favorite 
+restaurants right now, right from your phone!
+
