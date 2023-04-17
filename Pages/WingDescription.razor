@@ -3,12 +3,11 @@
 
 <PageTitle>Wings</PageTitle>
 <div id="description_screen">
-    <div id="description_header">
+    <img src="./images/wings.jpeg" id="image" / style="width: 100%; border-radius:0px; margin-top: 40px; margin-left:0px; margin-right:0px;">
+    <div id="description_header" style="padding: 0px;">
         <h1>Wings</h1>
         <h2>$7</h2>
     </div>
-
-    <img src="./images/wings.jpeg" id="image"/>
     <div id="description">
         <p>We use only the highest quality chicken and cook our wings to perfection to ensure that they're always tender and flavorful. And with a variety of dipping sauces available, you can customize your wings to your heart's content.</p>
         <h2>Ingredients</h2>
@@ -23,28 +22,35 @@
         <h2>Item Customization</h2>
 
         <div id="checkbox">
-            <input type="checkbox" id="item1" @onclick="toggleBox1">
-            <label for="item1"> No salt </label><br>
-            <input type="checkbox" id="item2" @onclick="toggleBox2">
+        <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item1" @onclick="toggleBox1" style="height:20px;">
+                <label for="item1"> No salt </label><br>
+        </div>
+        <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item2" @onclick="toggleBox2" style="height:20px;">
             <label for="item2"> Honey garlic sauce </label><br>
-            <input type="checkbox" id="item3" @onclick="toggleBox3">
-            <label for="item3"> Ketchup </label><br>
-            <input type="checkbox" id="item4" @onclick="toggleBox4">
-            <label for="item4"> Hot Sauce </label><br><br />
+        </div>
+        <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item3" @onclick="toggleBox3" style="height:20px;">
+                <label for="item3"> Ketchup </label><br>
+        </div>
+        <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item4" @onclick="toggleBox4" style="height:20px;">
+                <label for="item4"> Hot Sauce </label><br><br />
+            </div>
         </div>
 
         <h2>Special Instructions</h2>
         <textarea type="text" id="special_instructions" placeholder="Insert Any Special Instructions"></textarea>
+        <div style="margin-top: 200px;"></div>
     </div>
 
-    <div id="empty_space"></div>
-
     <div id="footer">
-        <button id="decrement" @onclick="decrementCount">-</button>
-        <label id="count"> @currentCount </label>
-        <button id="increment" @onclick="IncrementCount">+</button> <br />
+        <button id="decrement" @onclick="decrementCount" style="width: 50px; height:50px; font-size: 24px; border:none;">-</button>
+        <label id="count" style="font-size: 24px; "> @currentCount </label>
+        <button id="increment" @onclick="IncrementCount" style="width: 50px; height:50px; font-size: 24px; border:none;">+</button> <br />
 
-        <button id="cart" @onclick="addToCart">Add to cart</button>
+        <button id="cart" style="margin-top:10px; width: 150px; height:50px; font-size: 18px; border:none;" @onclick="addToCart">Add to cart</button>
     </div>
 </div>
 

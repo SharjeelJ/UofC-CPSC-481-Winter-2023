@@ -1,9 +1,7 @@
 ﻿@page "/BillRequested"
 @inject NavigationManager NavigationManager
 
-<div id="closeBtn-holder" style="display:flex; justify-content: end;">
-    <MudButton class="closeButton" OnClick="@navigateToPage" Size="Size.Large" Style="color: black; padding: 0px;"><MudIcon Icon="@Icons.Material.Filled.Close"></MudIcon></MudButton>
-</div>
+
 <div id="main-container" style="display: grid">
     <div id="title-container" style="display: flex; justify-content:center; margin-top: 20px;">
         <h3 style="font-size: 26px; margin-top: 140px; border-bottom: 2px solid black;">Thank you for your visit!</h3>
@@ -11,12 +9,14 @@
     <div id="title-container" style="display: flex; justify-content:center; margin-bottom: 20px;">
         <h3 style="font-size: 14px; margin-top: 40px;">We will get you your bill shortly!</h3>
     </div>
-
+    <div id="request-bill-holder" style="display: flex; justify-content:center; padding: 15px;">
+        <button @onclick="@navigateToHome" Style="margin-top: 150px; width: 80%; height: 75px; font-size: 20px; border: none; border-radius: 25px; background-color: #1B6EC2; color:white;">Back to Home</button>
+    </div>
 </div>
 
 
 @code {
-    public void navigateToPage()
+    public void navigateToHome()
     {
         NavigationManager.NavigateTo("/");
     }

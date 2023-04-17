@@ -1,5 +1,6 @@
 ﻿@page "/Cart"
 @inject NavigationManager NavigationManager
+@inject NavigationManager UriHelper
 
 <div class="page-title">
     <h1>Your Cart</h1>
@@ -30,7 +31,7 @@
                     <h4 class="fd-amt">@amount[id]</h4>
                 } else {
                     <h4 class="fd-amt">@itemDescriptions[x+2]</h4>
-                }                
+                }
                 <button class="increment" @onclick="() => increment(0)">+</button>
                 <h4 class="fd-name">@itemDescriptions[x]</h4>
                 <h3 class="fd-price">@("$" + itemDescriptions[x+1])</h3>
@@ -42,7 +43,12 @@
 </div>
 
 <div class="place-order">
-    <button>Place Order!</button>
+    
+    <div style="inline-flex; align-items: center; justify-content: center;">
+        <button onclick="@placeOrder">Place Order!</button>
+        <div style="padding-top: 10px;color: darkred; text-align:center;" hidden="@cartErrorHidden">Cart is empty</div>
+    </div>
+    
 </div>
 
 @code {
@@ -58,6 +64,24 @@
         if (amount[id] != 1)
         {
             amount[id] = amount[id] - 1;
+        }
+    }
+
+    bool cartErrorHidden = true;
+    async Task placeOrder()
+    {
+       
+
+        if (UriHelper.Uri.Contains('@'))
+        {
+            String[] temp = UriHelper.Uri.Split('?');
+            UriHelper.NavigateTo("/?" + temp[temp.Length - 1], forceLoad: true);
+        }
+        else
+        {
+            cartErrorHidden = false;
+            await Task.Delay(5000);
+            cartErrorHidden = true;
         }
     }
 }

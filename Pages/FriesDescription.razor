@@ -3,45 +3,56 @@
 
 <PageTitle>Fries</PageTitle>
 <div id="description_screen">
-    <div id="description_header">
+    
+    <img src="./images/fries.jpeg" id="image" / style="width: 100%; border-radius:0px; margin-top: 40px; margin-left:0px; margin-right:0px;">
+    <div id="description_header" style="padding: 0px;">
         <h1>Fries</h1>
         <h2>$4</h2>
     </div>
-    
-    <img src="./images/fries.jpeg" id="image"/>
     <div id="description">
         <p>All our fries are made in-house and we use only the finest, locally grown potatoes. Try our house-made fries which offers a delicious and authentic Canadian taste!</p>
         <h2>Ingredients</h2>
          <ul>
-            <li>salt</li>
-            <li>cheese</li>
-            <li>potato</li>
+            <li>Salt</li>
+            <li>Cheese</li>
+            <li>Potato</li>
         </ul> 
         <h2>Dietary Considerations</h2>
-        <p>Gluten Free</p>
         
+        <div><img src="images/gluten-free.png" height="30" style="width: 30px; margin:0px; margin-left: 40px; display:inline; margin-right: 10px;" >Gluten-Free</div>
+        <div style="margin-bottom: 20px;"></div>
         <h2>Item Customization</h2>
         <div id="checkbox">
-            <input type="checkbox" id="item1" @onclick="toggleBox1">
-            <label for="item1"> No salt </label><br>
-            <input type="checkbox" id="item2" @onclick="toggleBox2">
-            <label for="item2"> Waffle Fries </label><br>
-            <input type="checkbox" id="item3" @onclick="toggleBox3">
-            <label for="item3"> Ketchup </label><br><br />
+            <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item1" @onclick="toggleBox1" style="height:20px;">
+                <label for="item1"> No salt </label><br>
+            </div>
+            
+            <div style ="padding: 10px 0px;">
+                <input type="checkbox" id="item2" @onclick="toggleBox2" style="height:20px;">
+                <label for="item2"> Waffle Fries </label><br>
+            </div>
+            
+            <div style="padding: 10px 0px;">
+                <input type="checkbox" id="item3" @onclick="toggleBox3" style="height:20px;">
+                <label for="item3"> Ketchup </label><br><br />
+            </div>
+           
         </div>
         
         <h2>Special Instructions</h2>
         <textarea type="text" id="special_instructions" placeholder="Insert Any Special Instructions"></textarea>
+        <div style="margin-top: 100px;"></div>
     </div>
 
     <div id="empty_space"></div>
 
     <div id="footer">
-        <button id="decrement" @onclick="decrementCount">-</button>
-        <label id="count"> @currentCount </label>
-        <button id="increment" @onclick="IncrementCount">+</button> <br />
+        <button id="decrement" @onclick="decrementCount" style="width: 50px; height:50px; font-size: 24px; border:none;">-</button>
+        <label id="count" style="font-size: 24px; "> @currentCount </label>
+        <button id="increment" @onclick="IncrementCount" style="width: 50px; height:50px; font-size: 24px; border:none;">+</button> <br />
         
-        <button id="cart" @onclick="addToCart">Add to cart</button>
+        <button id="cart" style="margin-top:10px; width: 150px; height:50px; font-size: 18px; border:none; " @onclick="addToCart">Add to cart</button>
     </div>
 </div>
 
