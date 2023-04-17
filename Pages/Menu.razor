@@ -1,4 +1,5 @@
 ﻿@page "/Menu"
+@inject NavigationManager NavigationManager
 
 <PageTitle>Menu</PageTitle>
 
@@ -14,4 +15,9 @@
 @code {
     List<string> items = new List<string>() { "Nachos", "Steak" };
     private string selection = "";
+
+    private void NavigateToDisplayItem()
+    {
+        NavigationManager.NavigateTo("/DisplayItem");
+    }
 }
